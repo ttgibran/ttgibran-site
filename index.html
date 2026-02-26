@@ -3,51 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>T.T. Gibran | Author</title>
-
-    <meta name="description" content="T.T. Gibran - Speculative Fiction">
-    <meta property="og:title" content="T.T. Gibran | Author">
-    <meta property="og:url" content="https://ttgibran.com/">
-    <meta property="og:type" content="website">
-
+    <title>T.T. Gibran</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Amarante&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --bg-color: #faf9f6; 
-            --text-main: #2b2b2b; 
-            --accent: #5e5e5e;
+            --bg-color: #050505;
+            --text-main: #e0e0e0;
+            --accent: #888888;
         }
         body {
-            font-family: 'Lora', serif;
+            font-family: Calibri, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.8;
             margin: 0;
             padding: 0;
-            font-size: 18px;
+            font-size: 1.1rem;
         }
-        header { text-align: center; padding: 6rem 2rem 3rem; }
-        h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; font-weight: 700; letter-spacing: -0.02em; margin: 0; color: #111; }
-        .subtitle { font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent); font-size: 1.2rem; margin-top: 0.5rem; }
-        nav { text-align: center; margin-bottom: 4rem; }
-        nav a { font-family: 'Playfair Display', serif; color: var(--text-main); text-decoration: none; margin: 0 1.5rem; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid transparent; transition: border-bottom 0.3s ease; }
-        nav a:hover { border-bottom: 1px solid var(--text-main); }
-        main { max-width: 800px; margin: 0 auto; padding: 0 2rem 6rem; }
-        section { margin-bottom: 5rem; }
-        h2 { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 500; margin-bottom: 1.5rem; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem; }
-        .bio-container { display: flex; gap: 3rem; align-items: flex-start; }
-        .bio-text { flex: 1; }
-        .bio-image { width: 300px; height: auto; object-fit: cover; }
-        .pub-item { margin-bottom: 1.5rem; }
-        .pub-title { font-weight: 600; font-style: italic; }
-        .pub-venue { text-transform: uppercase; font-size: 0.9rem; letter-spacing: 0.05em; color: var(--accent); }
-        @media (max-width: 768px) {
-            .bio-container { flex-direction: column; }
-            .bio-image { width: 100%; height: auto; aspect-ratio: 3/4; }
-            h1 { font-size: 2.5rem; }
+        header {
+            padding: 80px 20px 40px;
+            text-align: center;
+        }
+        header h1 {
+            font-family: 'Amarante', serif;
+            font-size: 3.5rem;
+            margin: 0 0 15px 0;
+            font-weight: 400;
+            letter-spacing: 2px;
+            color: #ffffff;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        nav a {
+            font-family: Calibri, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            text-decoration: none;
+            color: var(--text-main);
+            font-size: 0.95rem;
+            letter-spacing: 1.5px;
+            border-bottom: 1px solid transparent;
+            transition: border-bottom 0.2s;
+            text-transform: lowercase;
+        }
+        nav a:hover {
+            border-bottom: 1px solid var(--text-main);
+        }
+        .container {
+            max-width: 750px;
+            margin: 0 auto;
+            padding: 0 20px 80px;
+        }
+        .section-title {
+            font-family: Calibri, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            margin: 60px 0 40px;
+            border-bottom: 1px solid #333333;
+            padding-bottom: 10px;
+            color: #ffffff;
+            font-weight: bold;
+            text-align: center;
+            text-transform: lowercase;
+        }
+        
+        .work-item {
+            margin-bottom: 50px;
+        }
+        .work-title {
+            font-family: Calibri, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-size: 1.25rem;
+            font-style: italic;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #ffffff;
+        }
+        .work-pub {
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+        .work-desc {
+            margin: 0;
+            color: #cccccc;
+            font-size: 1.1rem;
+        }
+
+        .bio-text p {
+            margin-top: 0;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+
+        /* Timeline Layout for Background */
+        .timeline-row {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+        .timeline-year {
+            width: 100px;
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+        .timeline-items {
+            flex-grow: 1;
+        }
+        .timeline-items p {
+            margin: 0 0 10px 0;
+        }
+        
+        /* Utility class for institution descriptions to separate from links */
+        .edu-desc {
+            color: var(--accent);
+            font-size: 0.95rem;
+            display: block;
+        }
+
+        .workshop-link {
+            color: var(--text-main);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-bottom 0.2s;
+        }
+        .workshop-link:hover {
+            border-bottom: 1px solid var(--text-main);
+        }
+
+        .contact-block {
+            text-align: left;
+        }
+        
+        .contact-block p {
+            font-size: 1.1rem;
+            color: var(--text-main);
+            margin: 0;
+        }
+
+        footer {
+            text-align: right;
+            max-width: 750px;
+            margin: 0 auto;
+            padding: 0 20px 40px;
+            color: var(--accent);
+            font-size: 0.85rem;
+            text-transform: lowercase;
         }
     </style>
 </head>
@@ -55,35 +162,69 @@
 
     <header>
         <h1>T.T. Gibran</h1>
-        <div class="subtitle">Speculative Fiction</div>
+        <nav>
+            <a href="#fiction">Fiction</a>
+            <a href="#about">About</a>
+            <a href="#background">Background</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </header>
 
-    <nav>
-        <a href="#about">About</a>
-        <a href="#selected-works">Selected Works</a>
-        <a href="mailto:travis.gibran@gmail.com">Contact</a>
-    </nav>
+    <div class="container">
 
-    <main>
-        <section id="about">
-            <h2>About</h2>
-            <div class="bio-container">
-                <div class="bio-text">
-                    <p>[ BIO STRING ]</p>
-                </div>
-            </div>
-        </section>
+        <div id="fiction" class="section-title">Fiction</div>
+        
+        <div class="work-item">
+            <div class="work-title"></div>
+            <div class="work-pub"></div>
+            <p class="work-desc"></p>
+        </div>
 
-        <section id="selected-works">
-            <h2>Selected Works</h2>
-            <div class="pub-item">
-                <div class="pub-title">"[ PUBLICATION TITLE ]"</div>
-                <div class="pub-venue">[ VENUE STRING ]</div>
-                <p>[ LOGLINE STRING
- ]</p>
+        <div id="about" class="section-title">About</div>
+        
+        <div class="bio-text">
+            <p></p>
+            <p></p>
+        </div>
+
+        <div id="background" class="section-title">Background</div>
+        
+        <div class="timeline-row">
+            <div class="timeline-year">2025</div>
+            <div class="timeline-items">
+                <p><a href="https://www.clarionwest.org/" class="workshop-link" target="_blank" rel="noopener noreferrer">Clarion West Six-Week Summer Workshop</a></p>
+                <p><a href="https://mccormackwritingcenter.org/" class="workshop-link" target="_blank" rel="noopener noreferrer">Tin House Fall Workshop</a></p>
+                <p><a href="https://juniperinstitute.umasscreate.net/" class="workshop-link" target="_blank" rel="noopener noreferrer">Juniper Summer Writing Institute</a></p>
             </div>
-        </section>
-    </main>
+        </div>
+
+        <div class="timeline-row">
+            <div class="timeline-year">2021</div>
+            <div class="timeline-items">
+                <p>MS, Data Science<br>
+                <span class="edu-desc">New York University</span></p>
+            </div>
+        </div>
+
+        <div class="timeline-row">
+            <div class="timeline-year">2017</div>
+            <div class="timeline-items">
+                <p>BS, Physics<br>
+                <span class="edu-desc">University of California, Santa Barbara</span></p>
+            </div>
+        </div>
+
+        <div id="contact" class="section-title">Contact</div>
+        
+        <div class="contact-block">
+            <p>travis.gibran@gmail.com</p>
+        </div>
+
+    </div>
+
+    <footer>
+        &copy; 2026 t.t. gibran. 
+    </footer>
 
 </body>
 </html>
