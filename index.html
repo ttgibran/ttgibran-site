@@ -23,9 +23,58 @@
             margin: 0;
             padding: 0;
             font-size: 1.1rem;
+            position: relative;
         }
+        
+        /* Flag Container */
+        .flag-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 15px;
+            z-index: 1000;
+        }
+
+        /* Pan-African Flag */
+        .pan-african-flag {
+            width: 45px;
+            height: 30px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .flag-red { background-color: #e31d2b; flex: 1; }
+        .flag-black { background-color: #000000; flex: 1; }
+        .flag-green { background-color: #007a3d; flex: 1; }
+
+        /* Palestinian Flag */
+        .palestinian-flag {
+            width: 45px;
+            height: 30px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .pal-black { background-color: #000000; flex: 1; }
+        .pal-white { background-color: #ffffff; flex: 1; }
+        .pal-green { background-color: #007a3d; flex: 1; }
+        .pal-triangle {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+            border-left: 20px solid #e31d2b;
+        }
+
         header {
-            padding: 80px 20px 40px;
+            padding: 100px 20px 40px; 
             text-align: center;
         }
         header h1 {
@@ -39,7 +88,8 @@
         nav {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            align-items: center;
+            gap: 20px;
             margin-bottom: 60px;
         }
         nav a {
@@ -51,9 +101,17 @@
             border-bottom: 1px solid transparent;
             transition: border-bottom 0.2s;
             text-transform: lowercase;
+            text-align: center;
+            line-height: 1.2;
         }
         nav a:hover {
             border-bottom: 1px solid var(--text-main);
+        }
+        .nav-divider {
+            color: #444444;
+            font-size: 0.9rem;
+            font-weight: 300;
+            user-select: none;
         }
         .container {
             max-width: 750px;
@@ -72,29 +130,6 @@
             text-align: center;
             text-transform: lowercase;
         }
-        
-        .work-item {
-            margin-bottom: 50px;
-        }
-        .work-title {
-            font-family: Calibri, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            font-size: 1.25rem;
-            font-style: italic;
-            font-weight: bold;
-            margin-bottom: 5px;
-            color: #ffffff;
-        }
-        .work-pub {
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            color: var(--accent);
-            margin-bottom: 15px;
-        }
-        .work-desc {
-            margin: 0;
-            color: #cccccc;
-            font-size: 1.1rem;
-        }
 
         .bio-text p {
             margin-top: 0;
@@ -102,7 +137,7 @@
             font-size: 1.1rem;
         }
 
-        /* Timeline Layout for Background */
+        /* Timeline Layout */
         .timeline-row {
             display: flex;
             align-items: flex-start;
@@ -120,21 +155,10 @@
             margin: 0 0 10px 0;
         }
         
-        /* Utility class for institution descriptions to separate from links */
         .edu-desc {
             color: var(--accent);
             font-size: 0.95rem;
             display: block;
-        }
-
-        .workshop-link {
-            color: var(--text-main);
-            text-decoration: none;
-            border-bottom: 1px solid transparent;
-            transition: border-bottom 0.2s;
-        }
-        .workshop-link:hover {
-            border-bottom: 1px solid var(--text-main);
         }
 
         .contact-block {
@@ -160,25 +184,36 @@
 </head>
 <body>
 
+    <div class="flag-container">
+        <div class="pan-african-flag" aria-label="Pan-African Flag">
+            <div class="flag-red"></div>
+            <div class="flag-black"></div>
+            <div class="flag-green"></div>
+        </div>
+        <div class="palestinian-flag" aria-label="Palestinian Flag">
+            <div class="pal-black"></div>
+            <div class="pal-white"></div>
+            <div class="pal-green"></div>
+            <div class="pal-triangle"></div>
+        </div>
+    </div>
+
     <header>
         <h1>T.T. Gibran</h1>
         <nav>
-            <a href="#fiction">Fiction</a>
             <a href="#about">About</a>
+            <span class="nav-divider">|</span>
+            <a href="#short-fiction">Short Fiction</a>
+            <span class="nav-divider">|</span>
+            <a href="#awards">Awards</a>
+            <span class="nav-divider">|</span>
             <a href="#background">Background</a>
+            <span class="nav-divider">|</span>
             <a href="#contact">Contact</a>
         </nav>
     </header>
 
     <div class="container">
-
-        <div id="fiction" class="section-title">Fiction</div>
-        
-        <div class="work-item">
-            <div class="work-title"></div>
-            <div class="work-pub"></div>
-            <p class="work-desc"></p>
-        </div>
 
         <div id="about" class="section-title">About</div>
         
@@ -187,21 +222,40 @@
             <p></p>
         </div>
 
+        <div id="short-fiction" class="section-title">Short Fiction</div>
+        
+        <div class="timeline-row">
+            <div class="timeline-year">2026</div>
+            <div class="timeline-items">
+                <p>Forthcoming</p>
+            </div>
+        </div>
+
+        <div id="awards" class="section-title">Awards</div>
+        
+        <div class="timeline-row">
+            <div class="timeline-year">2025</div>
+            <div class="timeline-items">
+                <p>Semi-Finalist, James M. Kirkwood Literary Prize<br>
+                <span class="edu-desc">UCLA Extension Writer’s Program</span></p>
+            </div>
+        </div>
+
         <div id="background" class="section-title">Background</div>
         
         <div class="timeline-row">
             <div class="timeline-year">2025</div>
             <div class="timeline-items">
-                <p><a href="https://www.clarionwest.org/" class="workshop-link" target="_blank" rel="noopener noreferrer">Clarion West Six-Week Summer Workshop</a></p>
-                <p><a href="https://mccormackwritingcenter.org/" class="workshop-link" target="_blank" rel="noopener noreferrer">Tin House Fall Workshop</a></p>
-                <p><a href="https://juniperinstitute.umasscreate.net/" class="workshop-link" target="_blank" rel="noopener noreferrer">Juniper Summer Writing Institute</a></p>
+                <p>Clarion West Six-Week Summer Workshop</p>
+                <p>Tin House Autumn Workshop</p>
+                <p>Juniper Summer Writing Institute</p>
             </div>
         </div>
 
         <div class="timeline-row">
             <div class="timeline-year">2021</div>
             <div class="timeline-items">
-                <p>MS, Data Science<br>
+                <p>Master of Science, Data Science<br>
                 <span class="edu-desc">New York University</span></p>
             </div>
         </div>
@@ -209,7 +263,7 @@
         <div class="timeline-row">
             <div class="timeline-year">2017</div>
             <div class="timeline-items">
-                <p>BS, Physics<br>
+                <p>Bachelor of Science, Physics<br>
                 <span class="edu-desc">University of California, Santa Barbara</span></p>
             </div>
         </div>
