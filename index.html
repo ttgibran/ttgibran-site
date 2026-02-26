@@ -1,60 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TT Gibran</title>
-<style>
-  body { 
-    font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, "Courier New", monospace; 
-    background-color: #0f0f0f; 
-    color: #e8e8e8; 
-    max-width: 650px; 
-    margin: 12vh auto; 
-    padding: 2rem; 
-    line-height: 1.6; 
-  }
-  h1 { 
-    font-size: 1.5rem; 
-    text-transform: uppercase; 
-    letter-spacing: 0.1em; 
-    border-bottom: 1px solid #333; 
-    padding-bottom: 0.5rem; 
-    font-weight: normal;
-  }
-  h2 {
-    font-size: 1rem;
-    text-transform: uppercase;
-    color: #888;
-    margin-top: 3rem;
-  }
-  a { 
-    color: #fff; 
-    text-decoration: none; 
-    border-bottom: 1px solid #555; 
-    transition: border-color 0.2s;
-  }
-  a:hover { border-bottom: 1px solid #fff; }
-  ul { list-style-type: square; padding-left: 1.2rem; }
-  li { margin-bottom: 0.5rem; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T.T. Gibran | Author</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #faf9f6; /* Ivory/Off-white */
+            --text-main: #2b2b2b; /* Charcoal */
+            --accent: #5e5e5e;
+        }
+        body {
+            font-family: 'Lora', serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            font-size: 18px;
+        }
+        header {
+            text-align: center;
+            padding: 6rem 2rem 3rem;
+        }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin: 0;
+            color: #111;
+        }
+        .subtitle {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+        }
+        nav {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        nav a {
+            font-family: 'Playfair Display', serif;
+            color: var(--text-main);
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 1px solid transparent;
+            transition: border-bottom 0.3s ease;
+        }
+        nav a:hover {
+            border-bottom: 1px solid var(--text-main);
+        }
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem 6rem;
+        }
+        section {
+            margin-bottom: 5rem;
+        }
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 0.5rem;
+        }
+        .bio-container {
+            display: flex;
+            gap: 3rem;
+            align-items: flex-start;
+        }
+        .bio-text {
+            flex: 1;
+        }
+        .bio-image {
+            width: 300px;
+            height: 400px;
+            background-color: #e0deda; 
+            object-fit: cover;
+        }
+        .pub-item {
+            margin-bottom: 1.5rem;
+        }
+        .pub-title {
+            font-weight: 600;
+            font-style: italic;
+        }
+        .pub-venue {
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            color: var(--accent);
+        }
+        @media (max-width: 768px) {
+            .bio-container {
+                flex-direction: column;
+            }
+            .bio-image {
+                width: 100%;
+                height: auto;
+                aspect-ratio: 3/4;
+            }
+            h1 { font-size: 2.5rem; }
+        }
+    </style>
 </head>
 <body>
 
-  <h1>TT Gibran</h1>
-  
-  <div>
-    <p>Operating at the intersection of high-compute architecture and the literary arts. Clarion West and Tin House alumnus.</p>
-    <p>Lineage: Black (South Carolina) and Palestinian (Haifa).</p>
-  </div>
+    <header>
+        <h1>T.T. Gibran</h1>
+        <div class="subtitle">Speculative Fiction</div>
+    </header>
 
-  <h2>Archive</h2>
-  <ul>
-    <li><em>[Insert Story Title Here]</em> — FIYAH Literary Magazine (2026)</li>
-  </ul>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#selected-works">Selected Works</a>
+        <a href="mailto:travis.gibran@gmail.com">Contact</a>
+    </nav>
 
-  <h2>Comms</h2>
-  <p><a href="mailto:your.email@example.com">Transmission Node</a></p>
+    <main>
+        <section id="about">
+            <h2>About</h2>
+            <div class="bio-container">
+                <div class="bio-text">
+                    <p>T.T. Gibran is an alumnus of the Clarion West and Tin House workshops. His narrative frameworks apply structural rigour to the ancestral memory of his Black (South Carolina) and Palestinian (Haifa) lineage.</p>
+                    <p>His work has been recognized by elite institutions across the speculative fiction landscape. He lives in Los Angeles.</p>
+                </div>
+                <img src="https://via.placeholder.com/300x400.png?text=Author+Portrait" alt="T.T. Gibran" class="bio-image">
+            </div>
+        </section>
+
+        <section id="selected-works">
+            <h2>Selected Works</h2>
+            <div class="pub-item">
+                <div class="pub-title">"[Insert Story Title]"</div>
+                <div class="pub-venue">FIYAH Literary Magazine (2026)</div>
+                <p>A narrative examining the algorithmic erasure of lineage, applying high-dimensional state modeling to existential memory.</p>
+            </div>
+        </section>
+    </main>
 
 </body>
 </html>
