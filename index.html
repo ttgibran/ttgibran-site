@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>T.T. Gibran</title>
+    <title>T.T. Gibran | Writer & Data Scientist</title>
+    
+    <meta name="description" content="T.T. Gibran (they/them) is a Black (Soulaan) and first-generation Palestinian writer whose speculative fiction blends African and Arab diasporic mythologies with alternate histories and dystopian futures.">
+    <meta name="author" content="T.T. Gibran">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -128,7 +131,7 @@
             opacity: 0;
             transition: opacity 1.2s ease-in-out;
             margin-bottom: 40px;
-            scroll-margin-top: 80px; /* Buffers the anchor routing jump */
+            scroll-margin-top: 80px;
         }
         .fade-section.is-focused {
             opacity: 1;
@@ -151,6 +154,8 @@
             margin-top: 0;
             margin-bottom: 25px;
             font-size: 1.1rem;
+            text-align: justify;
+            text-justify: inter-word;
         }
 
         /* Timeline Layout */
@@ -175,16 +180,6 @@
             color: var(--accent);
             font-size: 0.95rem;
             display: block;
-        }
-
-        .contact-block {
-            text-align: left;
-        }
-        
-        .contact-block p {
-            font-size: 1.1rem;
-            color: var(--text-main);
-            margin: 0;
         }
 
         footer {
@@ -216,7 +211,7 @@
                 gap: 10px 15px;
             }
             .nav-divider {
-                display: none; /* Strip dividers on mobile to prevent awkward wrapping */
+                display: none;
             }
             .timeline-row {
                 flex-direction: column;
@@ -266,8 +261,9 @@
         <section id="about" class="fade-section">
             <div class="section-title">About</div>
             <div class="bio-text">
-                <p></p>
-                <p></p>
+                <p>T.T. Gibran (they/them) is a Black (Soulaan) and first-generation Palestinian writer whose speculative fiction blends African and Arab diasporic mythologies with alternate histories and dystopian futures. They attended the Clarion West, Tin House, and Juniper workshops, and were a semi-finalist for the James M. Kirkwood Literary Prize. A former Researcher and current Engineer, they’ve earned degrees in Physics and Data Science, received a fellowship from DeepMind, and published in the Journal of Applied Physics.</p>
+                <p>Gibran’s stories draw heavily from their ancestry, tracing histories from the swamps of South Carolina to the shores of Haifa. They believe that all anti-colonial struggles are connected and that every word is an act of resistance, an expression of identity.<br>Free Congo. Free Palestine.</p>
+                <p>When they aren't writing, they spend their time re-reading Octavia Butler, making afrofuturist beats, and searching for a good (vegan) baklava. They currently live in Los Angeles with their partner and two dogs.</p>
             </div>
         </section>
 
@@ -310,6 +306,13 @@
                 </div>
             </div>
             <div class="timeline-row">
+                <div class="timeline-year">2020</div>
+                <div class="timeline-items">
+                    <p>Fellow<br>
+                    <span class="edu-desc">Google DeepMind</span></p>
+                </div>
+            </div>
+            <div class="timeline-row">
                 <div class="timeline-year">2019</div>
                 <div class="timeline-items">
                     <p>Master of Engineering, Technology Management<br>
@@ -327,8 +330,17 @@
 
         <section id="contact" class="fade-section">
             <div class="section-title">Contact</div>
-            <div class="contact-block">
-                <p>travis.gibran@gmail.com</p>
+            <div class="timeline-row">
+                <div class="timeline-year">email</div>
+                <div class="timeline-items">
+                    <p>travis.gibran@gmail.com</p>
+                </div>
+            </div>
+            <div class="timeline-row">
+                <div class="timeline-year">bluesky</div>
+                <div class="timeline-items">
+                    <p>@ttgibran.bsky.social</p>
+                </div>
             </div>
         </section>
 
