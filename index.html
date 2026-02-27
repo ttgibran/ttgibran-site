@@ -7,7 +7,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amarante&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amarante&family=Noto+Sans:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
     
     <style>
         html {
@@ -20,7 +20,7 @@
             --accent: #888888;
         }
         body {
-            font-family: Calibri, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Noto Sans', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.8;
@@ -97,7 +97,7 @@
             margin-bottom: 60px;
         }
         nav a {
-            font-family: Calibri, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Noto Sans', sans-serif;
             text-decoration: none;
             color: var(--text-main);
             font-size: 0.95rem;
@@ -126,18 +126,16 @@
         /* Focused Scroll States */
         .fade-section {
             opacity: 0;
-            transform: translateY(15px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            transition: opacity 1.2s ease-in-out;
             margin-bottom: 40px;
             scroll-margin-top: 80px; /* Buffers the anchor routing jump */
         }
         .fade-section.is-focused {
             opacity: 1;
-            transform: translateY(0);
         }
 
         .section-title {
-            font-family: Calibri, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Noto Sans', sans-serif;
             font-size: 1.5rem;
             letter-spacing: 2px;
             margin: 20px 0 40px;
@@ -298,7 +296,7 @@
     </div>
 
     <footer>
-        &copy; 2026 t.t. gibran. 
+        &copy; 2026 t.t. gibran
     </footer>
 
     <script>
@@ -307,8 +305,8 @@
             
             const observerOptions = {
                 root: null,
-                rootMargin: "-10% 0px -15% 0px", 
-                threshold: 0.1
+                rootMargin: "-10% 0px -5% 0px", 
+                threshold: 0
             };
 
             const observer = new IntersectionObserver((entries) => {
