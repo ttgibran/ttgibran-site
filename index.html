@@ -196,6 +196,38 @@
             font-size: 0.85rem;
             text-transform: lowercase;
         }
+
+        /* Mobile Optimization Matrix */
+        @media (max-width: 600px) {
+            .flag-container {
+                top: 15px;
+                right: 15px;
+                transform: scale(0.75);
+                transform-origin: top right;
+            }
+            header {
+                padding: 80px 15px 30px;
+            }
+            header h1 {
+                font-size: 2.5rem;
+            }
+            nav {
+                flex-wrap: wrap;
+                gap: 10px 15px;
+            }
+            .nav-divider {
+                display: none; /* Strip dividers on mobile to prevent awkward wrapping */
+            }
+            .timeline-row {
+                flex-direction: column;
+                margin-bottom: 35px;
+            }
+            .timeline-year {
+                width: 100%;
+                margin-bottom: 5px;
+                font-weight: 700;
+            }
+        }
     </style>
 </head>
 <body>
