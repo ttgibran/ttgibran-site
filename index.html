@@ -10,6 +10,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Amarante&display=swap" rel="stylesheet">
     
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        
         :root {
             --bg-color: #050505;
             --text-main: #e0e0e0;
@@ -118,11 +122,25 @@
             margin: 0 auto;
             padding: 0 20px 80px;
         }
+
+        /* Focused Scroll States */
+        .fade-section {
+            opacity: 0;
+            transform: translateY(15px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            margin-bottom: 40px;
+            scroll-margin-top: 80px; /* Buffers the anchor routing jump */
+        }
+        .fade-section.is-focused {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         .section-title {
             font-family: Calibri, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             font-size: 1.5rem;
             letter-spacing: 2px;
-            margin: 60px 0 40px;
+            margin: 20px 0 40px;
             border-bottom: 1px solid #333333;
             padding-bottom: 10px;
             color: #ffffff;
@@ -215,64 +233,67 @@
 
     <div class="container">
 
-        <div id="about" class="section-title">About</div>
-        
-        <div class="bio-text">
-            <p></p>
-            <p></p>
-        </div>
-
-        <div id="short-fiction" class="section-title">Short Fiction</div>
-        
-        <div class="timeline-row">
-            <div class="timeline-year">2026</div>
-            <div class="timeline-items">
-                <p>Forthcoming</p>
+        <section id="about" class="fade-section">
+            <div class="section-title">About</div>
+            <div class="bio-text">
+                <p></p>
+                <p></p>
             </div>
-        </div>
+        </section>
 
-        <div id="awards" class="section-title">Awards</div>
-        
-        <div class="timeline-row">
-            <div class="timeline-year">2025</div>
-            <div class="timeline-items">
-                <p>Semi-Finalist, James M. Kirkwood Literary Prize<br>
-                <span class="edu-desc">UCLA Extension Writer’s Program</span></p>
+        <section id="short-fiction" class="fade-section">
+            <div class="section-title">Short Fiction</div>
+            <div class="timeline-row">
+                <div class="timeline-year">2026</div>
+                <div class="timeline-items">
+                    <p>Forthcoming</p>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <div id="background" class="section-title">Background</div>
-        
-        <div class="timeline-row">
-            <div class="timeline-year">2025</div>
-            <div class="timeline-items">
-                <p>Clarion West Six-Week Summer Workshop</p>
-                <p>Tin House Autumn Workshop</p>
-                <p>Juniper Summer Writing Institute</p>
+        <section id="awards" class="fade-section">
+            <div class="section-title">Awards</div>
+            <div class="timeline-row">
+                <div class="timeline-year">2025</div>
+                <div class="timeline-items">
+                    <p>Semi-Finalist, James M. Kirkwood Literary Prize<br>
+                    <span class="edu-desc">UCLA Extension Writer’s Program</span></p>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <div class="timeline-row">
-            <div class="timeline-year">2021</div>
-            <div class="timeline-items">
-                <p>Master of Science, Data Science<br>
-                <span class="edu-desc">New York University</span></p>
+        <section id="background" class="fade-section">
+            <div class="section-title">Background</div>
+            <div class="timeline-row">
+                <div class="timeline-year">2025</div>
+                <div class="timeline-items">
+                    <p>Clarion West Six-Week Summer Workshop</p>
+                    <p>Tin House Autumn Workshop</p>
+                    <p>Juniper Summer Writing Institute</p>
+                </div>
             </div>
-        </div>
-
-        <div class="timeline-row">
-            <div class="timeline-year">2017</div>
-            <div class="timeline-items">
-                <p>Bachelor of Science, Physics<br>
-                <span class="edu-desc">University of California, Santa Barbara</span></p>
+            <div class="timeline-row">
+                <div class="timeline-year">2021</div>
+                <div class="timeline-items">
+                    <p>Master of Science, Data Science<br>
+                    <span class="edu-desc">New York University</span></p>
+                </div>
             </div>
-        </div>
+            <div class="timeline-row">
+                <div class="timeline-year">2017</div>
+                <div class="timeline-items">
+                    <p>Bachelor of Science, Physics<br>
+                    <span class="edu-desc">University of California, Santa Barbara</span></p>
+                </div>
+            </div>
+        </section>
 
-        <div id="contact" class="section-title">Contact</div>
-        
-        <div class="contact-block">
-            <p>travis.gibran@gmail.com</p>
-        </div>
+        <section id="contact" class="fade-section">
+            <div class="section-title">Contact</div>
+            <div class="contact-block">
+                <p>travis.gibran@gmail.com</p>
+            </div>
+        </section>
 
     </div>
 
@@ -280,5 +301,30 @@
         &copy; 2026 t.t. gibran. 
     </footer>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const sections = document.querySelectorAll('.fade-section');
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: "-10% 0px -15% 0px", 
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-focused');
+                    } else {
+                        entry.target.classList.remove('is-focused');
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
 </body>
 </html>
