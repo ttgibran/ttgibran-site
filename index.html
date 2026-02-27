@@ -177,6 +177,17 @@
             margin: 0 0 10px 0;
         }
         
+        /* Contact Links */
+        .timeline-items a {
+            color: var(--text-main);
+            text-decoration: none;
+            border-bottom: 1px solid #444444;
+            transition: border-bottom 0.2s;
+        }
+        .timeline-items a:hover {
+            border-bottom: 1px solid var(--text-main);
+        }
+        
         .edu-desc {
             color: var(--accent);
             font-size: 0.95rem;
@@ -334,13 +345,13 @@
             <div class="timeline-row">
                 <div class="timeline-year">email</div>
                 <div class="timeline-items">
-                    <p>travis.gibran@gmail.com</p>
+                    <p><a href="mailto:travis.gibran@gmail.com">travis.gibran@gmail.com</a></p>
                 </div>
             </div>
             <div class="timeline-row">
                 <div class="timeline-year">bluesky</div>
                 <div class="timeline-items">
-                    <p>@ttgibran.bsky.social</p>
+                    <p><a href="https://bsky.app/profile/ttgibran.bsky.social" target="_blank" rel="noopener noreferrer">@ttgibran.bsky.social</a></p>
                 </div>
             </div>
         </section>
