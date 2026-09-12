@@ -170,6 +170,31 @@
             align-items: flex-start;
             margin-bottom: 25px;
         }
+        .review {
+            margin: 16px 0 0;
+            padding-left: 14px;
+            border-left: 1px solid #333333;
+        }
+        .review blockquote { margin: 0; }
+        .review blockquote p {
+            margin: 0;
+            font-size: 0.95rem;
+            font-style: italic;
+            line-height: 1.65;
+        }
+        .review figcaption {
+            margin-top: 8px;
+            font-size: 0.85rem;
+            color: var(--accent);
+        }
+        .review figcaption cite { font-style: italic; }
+        .review figcaption a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid #333333;
+            transition: border-bottom 0.2s;
+        }
+        .review figcaption a:hover { border-bottom: 1px solid var(--accent); }
         .timeline-year {
             width: 100px;
             color: var(--accent);
@@ -283,6 +308,14 @@
                         <div>
                             <a href="https://fiyahlitmag.com/shop/issues/2026-issues/fiyah-38/" target="_blank" rel="noopener noreferrer">Minority Museum</a><br>
                             <span class="edu-desc">FIYAH Magazine, Issue #38</span>
+                            <figure class="review">
+                                <blockquote cite="https://locusmag.com/review/fiyah-beneath-ceaseless-skies-and-small-wonders-review-by-maria-haskins/">
+                                    <p>“There’s a heartbreaking and transcendent quality to this story as Gibran presents each new painful iteration of Ahmad’s fate.”</p>
+                                </blockquote>
+                                <figcaption>
+                                    <a href="https://locusmag.com/review/fiyah-beneath-ceaseless-skies-and-small-wonders-review-by-maria-haskins/" target="_blank" rel="noopener noreferrer">Maria Haskins, <cite>Locus</cite></a>
+                                </figcaption>
+                            </figure>
                         </div>
                     </div>
                 </div>
